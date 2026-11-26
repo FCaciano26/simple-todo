@@ -41,7 +41,7 @@ def main():
             return
         description = " ".join(args)
         # Por enquanto, chama add_task sem o parâmetro urgent (default).
-        manager.add_task(description)
+        manager.add_task(description, urgent)
     elif cmd == "done":
         if len(sys.argv) < 3:
             print("Error: missing id")

@@ -40,7 +40,7 @@ class TodoManager:
         task = {
             "description": description,
             "done": False,
-            # 'urgent' não está presente - é aqui que os alunos devem adicionar
+            "urgent": urgent,
             "created": datetime.utcnow().isoformat() + "Z"
         }
         self.tasks.append(task)
