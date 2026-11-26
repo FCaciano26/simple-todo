@@ -2,7 +2,7 @@
 import sys
 from todo import TodoManager
 
-WELCOME = "Simple TODO"  
+WELCOME = "Simple TODO -v1.0.1"  
 
 def print_usage():
     print("Usage: python3 main.py [list|add|done|remove] [args...]")
