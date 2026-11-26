@@ -32,6 +32,10 @@ def main():
         #
         # Atualmente o suporte a "urgent" NÃO está implementado.
         args = sys.argv[2:]
+        urgent = False
+        if args and args[0] == "--urgent":
+            urgent = True
+            args = args[1:]  # Remove o argumento --urgent da lista de argumentos
         if not args:
             print("Error: missing description")
             return
