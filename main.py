@@ -2,7 +2,7 @@
 import sys
 from todo import TodoManager
 
-WELCOME = "Simple TODO -v1.0.1"  
+WELCOME = "Simple TODO v1.0.1 (with urgent tasks)" 
 
 def print_usage():
     print("Usage: python3 main.py [list|add|done|remove] [args...]")
@@ -32,12 +32,16 @@ def main():
         #
         # Atualmente o suporte a "urgent" NÃO está implementado.
         args = sys.argv[2:]
+        urgent = False
+        if args and args[0] == "--urgent":
+            urgent = True
+            args = args[1:]  # Remove o argumento --urgent da lista de argumentos
         if not args:
             print("Error: missing description")
             return
         description = " ".join(args)
         # Por enquanto, chama add_task sem o parâmetro urgent (default).
-        manager.add_task(description)
+        manager.add_task(description, urgent)
     elif cmd == "done":
         if len(sys.argv) < 3:
             print("Error: missing id")
